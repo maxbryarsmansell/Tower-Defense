@@ -1,5 +1,6 @@
 # Visual Studio files and folder
 .vs/
+.vscode/
 **.sln
 **.vcxproj
 **.vcxproj.filters
@@ -7,3 +8,6 @@
 
 # Build
 build/
+
+# CMake
+CMakeFiles

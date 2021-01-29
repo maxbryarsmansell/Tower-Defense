@@ -1,0 +1,3 @@
+- Gravity changes when moving
+- Player controls themselves from perspective of other - '2nd person'
+- Player controls world to move the player

@@ -14,7 +14,14 @@ set(GLFW_BUILD_DOCS OFF CACHE BOOL "" FORCE)
 set(GLFW_BUILD_TESTS OFF CACHE BOOL "" FORCE)
 set(GLFW_BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
 
+add_compile_definitions(GLFW_INCLUDE_NONE)
+
+add_subdirectory(libs/glad)
+add_subdirectory(libs/entt)
 add_subdirectory(src)
+
+file(GLOB_RECURSE RES_FILES "res/*.vs" "res/*.fs")
+file(COPY ${RES_FILES} DESTINATION "res")
 
 
 
