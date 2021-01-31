@@ -11,12 +11,12 @@ namespace engine
     struct Physics
     {
         float vx, vy, vz;
+        float ax, ay, az;
     };
 
     struct Graphics
     {
         float r, g, b, a;
     };
-
 } // namespace engine
 #endif
