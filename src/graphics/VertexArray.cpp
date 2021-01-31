@@ -13,11 +13,11 @@ namespace engine
         glDeleteVertexArrays(1, &m_Array);
     }
 
-    void VertexArray::set_vertex_buffer(VertexBuffer& vertex_buffer)
+    void VertexArray::setVertexBuffer(VertexBuffer& vertexBuffer)
     {
         glBindVertexArray(m_Array);
 
-        vertex_buffer.bind();
+        vertexBuffer.bind();
 
         // Predefined Layout:
         // vec3 position

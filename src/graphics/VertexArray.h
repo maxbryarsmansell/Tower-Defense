@@ -1,10 +1,9 @@
-#pragma once
+#ifndef VERTEX_ARRAY_H
+#define VERTEX_ARRAY_H
 
 #include "VertexBuffer.h"
 
 #include <glad/glad.h>
-
-#include <memory>
 
 namespace engine
 {
@@ -17,10 +16,11 @@ namespace engine
         VertexArray();
         ~VertexArray();
 
-        void set_vertex_buffer(VertexBuffer& vertex_buffer);
+        void setVertexBuffer(VertexBuffer& vertexBuffer);
 
         void bind();
         void unbind();
     };
-
 } // namespace engine
+
+#endif

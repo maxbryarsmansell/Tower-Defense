@@ -5,9 +5,10 @@
 #include "graphics/VertexArray.h"
 #include "graphics/VertexBuffer.h"
 
+#include <memory>
+
 namespace engine
 {
-
     static const int MAX_VERTICES = 1024;
     static const int VERTEX_SIZE = 6;
     static const int MAX_BYTES = MAX_VERTICES * VERTEX_SIZE * sizeof(float);
@@ -20,7 +21,7 @@ namespace engine
         };
 
     private:
-        std::unique_ptr<Shader> m_Shader;
+        std::shared_ptr<Shader> m_Shader;
 
         VertexArray m_VertexArray;
         VertexBuffer m_VertexBuffer;

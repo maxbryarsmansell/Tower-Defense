@@ -6,9 +6,9 @@
 namespace engine
 {
 
-    Shader::Shader(const std::string &vertex_src, const std::string &fragment_src)
+    Shader::Shader(const std::string &vertexSrc, const std::string &fragmentSrc)
     {
-        compile(vertex_src, fragment_src);
+        compile(vertexSrc, fragmentSrc);
     }
 
     Shader::~Shader()
@@ -26,20 +26,20 @@ namespace engine
         glUseProgram(0);
     }
 
-    void Shader::set_uniform_float(const std::string &name, float value)
-    {   
+    void Shader::setUniformFloat(const std::string &name, float value)
+    {
         glUseProgram(m_Program);
 
         GLint loc = glGetUniformLocation(m_Program, name.c_str());
         glUniform1f(loc, value);
     }
 
-    void Shader::compile(const std::string &vertex_src, const std::string &fragment_src)
+    void Shader::compile(const std::string &vertexSrc, const std::string &fragmentSrc)
     {
         int success;
-        char info_log[512];
-        const GLchar *vertex_c_str = vertex_src.c_str();
-        const GLchar *fragment_c_str = fragment_src.c_str();
+        char infoLog[512];
+        const GLchar *vertex_c_str = vertexSrc.c_str();
+        const GLchar *fragment_c_str = fragmentSrc.c_str();
 
         GLuint vertex = glCreateShader(GL_VERTEX_SHADER);
         glShaderSource(vertex, 1, &vertex_c_str, NULL);
@@ -48,9 +48,9 @@ namespace engine
         glGetShaderiv(vertex, GL_COMPILE_STATUS, &success);
         if (!success)
         {
-            glGetShaderInfoLog(vertex, 512, NULL, info_log);
+            glGetShaderInfoLog(vertex, 512, NULL, infoLog);
             std::cout << "[ERROR]: Vertex Shader Compilation Failed" << std::endl
-                      << info_log << std::endl;
+                      << infoLog << std::endl;
         };
 
         GLuint fragment = glCreateShader(GL_FRAGMENT_SHADER);
@@ -60,9 +60,9 @@ namespace engine
         glGetShaderiv(fragment, GL_COMPILE_STATUS, &success);
         if (!success)
         {
-            glGetShaderInfoLog(fragment, 512, NULL, info_log);
+            glGetShaderInfoLog(fragment, 512, NULL, infoLog);
             std::cout << "[ERROR]: Fragment Shader Compilation Failed" << std::endl
-                      << info_log << std::endl;
+                      << infoLog << std::endl;
         };
 
         GLuint program = glCreateProgram();
@@ -74,9 +74,9 @@ namespace engine
         glGetProgramiv(program, GL_LINK_STATUS, &success);
         if (!success)
         {
-            glGetProgramInfoLog(program, 512, NULL, info_log);
+            glGetProgramInfoLog(program, 512, NULL, infoLog);
             std::cout << "[ERROR]: Program Linking Failed" << std::endl
-                      << info_log << std::endl;
+                      << infoLog << std::endl;
         }
 
         glDeleteShader(vertex);

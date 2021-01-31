@@ -11,8 +11,8 @@ namespace engine
 
         m_Shader = std::make_unique<Shader>(vertex_src, fragment_src);
 
-        m_VertexBuffer.buffer_data(nullptr, MAX_BYTES);
-        m_VertexArray.set_vertex_buffer(m_VertexBuffer);
+        m_VertexBuffer.bufferData(nullptr, MAX_BYTES);
+        m_VertexArray.setVertexBuffer(m_VertexBuffer);
 
         m_Vertices = new Renderer::Vertex[MAX_BYTES];
         m_Start = m_Vertices;
@@ -45,7 +45,7 @@ namespace engine
         // std::cout << m_Count << std::endl;
 
         GLsizei size = m_Count * VERTEX_SIZE * sizeof(float);
-        m_VertexBuffer.buffer_sub_data(m_Start, size);
+        m_VertexBuffer.bufferSubData(m_Start, size);
 
         m_Shader->bind();
         m_VertexArray.bind();

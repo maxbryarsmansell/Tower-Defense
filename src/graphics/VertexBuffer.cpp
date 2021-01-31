@@ -12,13 +12,13 @@ namespace engine
         glDeleteBuffers(1, &m_Buffer);
     }
 
-    void VertexBuffer::buffer_data(const void *data, GLsizeiptr size)
+    void VertexBuffer::bufferData(const void *data, GLsizeiptr size)
     {
         glBindBuffer(GL_ARRAY_BUFFER, m_Buffer);
         glBufferData(GL_ARRAY_BUFFER, size, data, GL_DYNAMIC_DRAW);
     }
 
-    void VertexBuffer::buffer_sub_data(const void *data, GLsizeiptr size)
+    void VertexBuffer::bufferSubData(const void *data, GLsizeiptr size)
     {
         glBindBuffer(GL_ARRAY_BUFFER, m_Buffer);
         glBufferSubData(GL_ARRAY_BUFFER, 0, size, data);

@@ -5,9 +5,6 @@
 
 #include <entt/entt.hpp>
 
-#include <iostream>
-#include <cmath>
-
 class TestLayer : public engine::Layer
 {
 private:

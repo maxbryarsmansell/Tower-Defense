@@ -13,16 +13,16 @@ namespace engine
         GLuint m_Program;
 
     public:
-        Shader(const std::string &vertex_src, const std::string &fragment_src);
+        Shader(const std::string &vertexSrc, const std::string &fragmentSrc);
         ~Shader();
 
         void bind();
         void unbind();
 
-        void set_uniform_float(const std::string &name, float value);
+        void setUniformFloat(const std::string &name, float value);
 
     private:
-        void compile(const std::string &vertex_src, const std::string &fragment_src);
+        void compile(const std::string &vertexSrc, const std::string &fragmentSrc);
 
     public:
         static std::string load(const std::string &filepath);
